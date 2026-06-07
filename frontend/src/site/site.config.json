@@ -1,0 +1,86 @@
+{
+  "practice": {
+    "name": "Dundalk Animal Hospital",
+    "shortName": "Dundalk Animal Hospital",
+    "displayLines": [
+      "Dundalk Animal",
+      "Hospital"
+    ],
+    "tagline": "Community veterinary care in Dundalk, MD.",
+    "description": "Dundalk Animal Hospital provides veterinary care for dogs, cats, birds, exotic pets, and other animals in Dundalk, Maryland, with services including wellness care, vaccinations, dental care, surgery, diagnostics, grooming, and boarding based on public listings.",
+    "serviceArea": "Dundalk, MD"
+  },
+  "brand": {
+    "logo": "/brand/dundalk-logo.svg",
+    "logoAlt": "Dundalk Animal Hospital logo",
+    "colors": {
+      "light": "#F7F4EA",
+      "dark": "#123C69",
+      "accent": "#2A9D8F",
+      "accentLight": "#DDF2EF"
+    }
+  },
+  "contact": {
+    "phone": "(410) 282-2250",
+    "phoneHref": "tel:+14102822250",
+    "email": "dundalkanimalhosp@yahoo.com",
+    "address": {
+      "street": "7810 Wise Ave",
+      "line2": "",
+      "city": "Dundalk",
+      "state": "MD",
+      "zip": "21222",
+      "country": "US"
+    }
+  },
+  "hours": [
+    [
+      "Monday",
+      "8:00 AM \u2013 7:30 PM"
+    ],
+    [
+      "Tuesday",
+      "8:00 AM \u2013 6:00 PM"
+    ],
+    [
+      "Wednesday",
+      "8:00 AM \u2013 7:30 PM"
+    ],
+    [
+      "Thursday",
+      "8:00 AM \u2013 7:30 PM"
+    ],
+    [
+      "Friday",
+      "8:00 AM \u2013 7:30 PM"
+    ],
+    [
+      "Saturday",
+      "8:00 AM \u2013 3:00 PM"
+    ],
+    [
+      "Sunday",
+      "8:00 AM \u2013 12:30 PM"
+    ]
+  ],
+  "links": {
+    "website": "https://dah.RCLintegrated.com",
+    "appointment": "tel:+14102822250",
+    "store": "",
+    "pharmacy": "",
+    "onlineForms": "",
+    "facebook": "https://www.facebook.com/p/Dundalk-Animal-Hospital-100089304327909/",
+    "instagram": "",
+    "linkedin": "",
+    "googleBusinessProfile": ""
+  },
+  "team": [],
+  "features": {
+    "clientPortal": true,
+    "onlineBooking": false,
+    "storeLink": false,
+    "pharmacyLink": false,
+    "onlineFormsLink": false,
+    "teamSection": false
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "siteId": "dundalk-animal-hospital",
+  "source": {
+    "mode": "no_official_website",
+    "searchedAt": "2026-06-07T16:19:41.982953+00:00",
+    "businessNameProvided": "Dundalk Animal Hospital",
+    "locationHint": "Dundalk, MD",
+    "notes": []
+  },
+  "googleBusinessProfile": {
+    "url": "",
+    "name": {
+      "value": "Dundalk Animal Hospital",
+      "confidence": "user_provided",
+      "sourceUrl": ""
+    },
+    "category": "",
+    "rating": null,
+    "reviewCount": null,
+    "address": {
+      "value": "7810 Wise Ave, Dundalk, MD 21222",
+      "confidence": "user_provided",
+      "sourceUrl": ""
+    },
+    "phone": {
+      "value": "(410) 282-2250",
+      "confidence": "user_provided",
+      "sourceUrl": ""
+    },
+    "hours": [
+      {
+        "day": "Monday",
+        "raw": "8AM - 7:30PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      },
+      {
+        "day": "Tuesday",
+        "raw": "8AM - 6PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      },
+      {
+        "day": "Wednesday",
+        "raw": "8AM - 7:30PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      },
+      {
+        "day": "Thursday",
+        "raw": "8AM - 7:30PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      },
+      {
+        "day": "Friday",
+        "raw": "8AM - 7:30PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      },
+      {
+        "day": "Saturday",
+        "raw": "8AM - 3PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      },
+      {
+        "day": "Sunday",
+        "raw": "8AM - 12:30PM",
+        "confidence": "likely",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+      }
+    ],
+    "photos": []
+  },
+  "socialProfiles": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/p/Dundalk-Animal-Hospital-100089304327909/",
+      "officialConfidence": "uncertain",
+      "facts": [],
+      "images": []
+    }
+  ],
+  "publicListings": [],
+  "practice": {
+    "name": {
+      "value": "Dundalk Animal Hospital",
+      "confidence": "user_provided",
+      "sourceUrl": ""
+    },
+    "shortName": "Dundalk Animal Hospital",
+    "tagline": "",
+    "description": "Dundalk Animal Hospital provides veterinary care for dogs, cats, birds, exotic pets, and other animals in Dundalk, Maryland, with services including wellness care, vaccinations, dental care, surgery, diagnostics, grooming, and boarding based on public listings.",
+    "serviceArea": "Dundalk, MD"
+  },
+  "contact": {
+    "phone": {
+      "value": "(410) 282-2250",
+      "confidence": "user_provided",
+      "sourceUrl": ""
+    },
+    "email": {
+      "value": "dundalkanimalhosp@yahoo.com",
+      "confidence": "likely",
+      "sourceUrl": "https://www.facebook.com/p/Dundalk-Animal-Hospital-100089304327909/"
+    },
+    "address": {
+      "street": "7810 Wise Ave",
+      "line2": "",
+      "city": "Dundalk",
+      "state": "MD",
+      "zip": "21222",
+      "country": "US",
+      "confidence": "user_provided",
+      "sourceUrl": ""
+    }
+  },
+  "hours": [
+    {
+      "day": "Monday",
+      "raw": "8AM - 7:30PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    },
+    {
+      "day": "Tuesday",
+      "raw": "8AM - 6PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    },
+    {
+      "day": "Wednesday",
+      "raw": "8AM - 7:30PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    },
+    {
+      "day": "Thursday",
+      "raw": "8AM - 7:30PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    },
+    {
+      "day": "Friday",
+      "raw": "8AM - 7:30PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    },
+    {
+      "day": "Saturday",
+      "raw": "8AM - 3PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    },
+    {
+      "day": "Sunday",
+      "raw": "8AM - 12:30PM",
+      "confidence": "likely",
+      "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/"
+    }
+  ],
+  "team": [],
+  "services": [
+    {
+      "name": "Wellness & Preventive Care",
+      "animalTypes": [
+        "dog",
+        "cat",
+        "small_animals",
+        "birds",
+        "exotics"
+      ],
+      "confidence": "inferred",
+      "sourceUrl": "https://www.geniusvets.com/pet-care/find/maryland/dundalk/veterinarians/dundalk-animal-hospital-15778"
+    },
+    {
+      "name": "Vaccinations",
+      "animalTypes": [
+        "dog",
+        "cat"
+      ],
+      "confidence": "likely",
+      "sourceUrl": "https://www.geniusvets.com/pet-care/find/maryland/dundalk/veterinarians/dundalk-animal-hospital-15778"
+    },
+    {
+      "name": "Dental Care",
+      "animalTypes": [
+        "dog",
+        "cat"
+      ],
+      "confidence": "likely",
+      "sourceUrl": "https://www.geniusvets.com/pet-care/find/maryland/dundalk/veterinarians/dundalk-animal-hospital-15778"
+    },
+    {
+      "name": "Surgery",
+      "animalTypes": [
+        "dog",
+        "cat"
+      ],
+      "confidence": "likely",
+      "sourceUrl": "https://www.geniusvets.com/pet-care/find/maryland/dundalk/veterinarians/dundalk-animal-hospital-15778"
+    },
+    {
+      "name": "Grooming",
+      "animalTypes": [
+        "dog",
+        "cat"
+      ],
+      "confidence": "likely",
+      "sourceUrl": "https://www.yelp.com/biz/dundalk-animal-hospital-dundalk"
+    },
+    {
+      "name": "Boarding",
+      "animalTypes": [
+        "dog",
+        "cat"
+      ],
+      "confidence": "inferred",
+      "sourceUrl": "https://pethotels.com/us/md/dundalk/animal-hospitals/410-282-2250"
+    }
+  ],
+  "reviews": {
+    "general": [
+      {
+        "author": "Public review excerpt",
+        "rating": null,
+        "date": "2025-12",
+        "text": "Love love love the ladies at desk are so friendly, vet techs are great and the Veterinarians are awesome!!! I've been going here for 30+ years",
+        "excerpt": "Friendly front desk, great vet techs, and awesome veterinarians — a client says they have been going here for 30+ years.",
+        "source": "current_listing",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/",
+        "categories": [
+          "general"
+        ],
+        "animalTypes": [],
+        "useForHomepage": true,
+        "notes": "Excerpted from public Loc8NearMe review snippet"
+      },
+      {
+        "author": "Public review excerpt",
+        "rating": null,
+        "date": "2025-10",
+        "text": "A pretty popular place, based on the amount of clients. We came in at the scheduled appointment time and were seen within 10 minutes. The price was quite reasonable. We will switch to this vet for sure.",
+        "excerpt": "A client described the hospital as popular, reasonably priced, and worth switching to.",
+        "source": "current_listing",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/",
+        "categories": [
+          "general"
+        ],
+        "animalTypes": [],
+        "useForHomepage": true,
+        "notes": "Excerpted from public Loc8NearMe review snippet"
+      }
+    ],
+    "dogs": [
+      {
+        "author": "Public review excerpt",
+        "rating": null,
+        "date": "2025-12",
+        "text": "Wasn't at all expensive. They looked over my dog and gave me prescription medication with 3 refills for her infected tooth! Really appreciate them!",
+        "excerpt": "A dog owner appreciated affordable care and prescription help for an infected tooth.",
+        "source": "current_listing",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/",
+        "categories": [
+          "dogs"
+        ],
+        "animalTypes": [
+          "dog"
+        ],
+        "useForHomepage": true,
+        "notes": "Excerpted from public Loc8NearMe review snippet"
+      }
+    ],
+    "cats": [
+      {
+        "author": "Public review/reference",
+        "rating": null,
+        "date": "",
+        "text": "Public listings describe care for cats and kittens, with services including vaccinations, dental care, diagnostics, and surgery.",
+        "excerpt": "Public listings describe care for cats and kittens, including preventive and medical services.",
+        "source": "public_listing",
+        "sourceUrl": "https://www.geniusvets.com/pet-care/find/maryland/dundalk/veterinarians/dundalk-animal-hospital-15778",
+        "categories": [
+          "cats"
+        ],
+        "animalTypes": [
+          "cat"
+        ],
+        "useForHomepage": false,
+        "notes": "Not a direct review; use as fallback until cat-specific review is approved"
+      }
+    ],
+    "small_animals": [
+      {
+        "author": "Public review/reference",
+        "rating": null,
+        "date": "",
+        "text": "Public listings describe services for birds, exotic pets, livestock, farm animals, and other small or nontraditional pets.",
+        "excerpt": "Public listings describe care for birds, exotic pets, and other nontraditional animals.",
+        "source": "public_listing",
+        "sourceUrl": "https://www.loc8nearme.com/maryland/dundalk/dundalk-animal-hospital/4824544/",
+        "categories": [
+          "small_animals"
+        ],
+        "animalTypes": [
+          "birds",
+          "exotics",
+          "small_animals"
+        ],
+        "useForHomepage": false,
+        "notes": "Not a direct review; use as fallback until small-animal review is approved"
+      }
+    ],
+    "uncategorized": []
+  },
+  "brand": {
+    "logos": [],
+    "colors": [
+      {
+        "hex": "#123C69",
+        "source": "manual",
+        "usage": "primary"
+      },
+      {
+        "hex": "#2A9D8F",
+        "source": "manual",
+        "usage": "accent"
+      },
+      {
+        "hex": "#F7F4EA",
+        "source": "manual",
+        "usage": "background"
+      }
+    ],
+    "provisionalBrandNeeded": true,
+    "notes": []
+  },
+  "seo": {
+    "title": "Dundalk Animal Hospital | Veterinary Care in Dundalk, MD",
+    "description": "Dundalk Animal Hospital provides veterinary care for dogs, cats, birds, exotic pets, and other animals in Dundalk, MD. Call (410) 282-2250.",
+    "canonical": "https://dah.RCLintegrated.com",
+    "jsonLd": {
+      "type": "VeterinaryCare",
+      "needsReview": true
+    },
+    "socialImage": ""
+  },
+  "favicons": {
+    "sourceLogo": "",
+    "faviconIco": "frontend/public/favicon.ico",
+    "logo192": "frontend/public/logo192.png",
+    "logo512": "frontend/public/logo512.png",
+    "appleTouchIcon": "frontend/public/apple-touch-icon.png",
+    "status": "provisional_monogram",
+    "notes": [
+      "No official logo found from accessible sources; generated provisional DAH monogram favicon/app icons."
+    ]
+  },
+  "placeholderDomain": {
+    "businessAcronym": "dah",
+    "domain": "dah.RCLintegrated.com",
+    "railwayDomainStatus": "not_configured",
+    "dnsStatus": "not_configured"
+  },
+  "novaSiteEditor": {
+    "demoDefault": "disabled",
+    "finalizedSiteRecommended": true,
+    "siteId": "",
+    "requiredEnvVars": [
+      "EDIT_REQUEST_ENABLED",
+      "EDIT_REQUEST_SITE_ID",
+      "EDIT_REQUEST_SITE_KEY",
+      "EDIT_REQUEST_CALLBACK_AUTH",
+      "PUBLIC_SITE_URL"
+    ]
+  },
+  "openQuestions": [
+    "Confirm current official website/domain; provided Dundalkanimalhospitalmd.Com did not resolve.",
+    "Confirm whether dundalkanimalhosp@yahoo.com is still current.",
+    "Confirm exact current hours; public listings vary between sources.",
+    "Confirm current doctors/team members; Dennis G. Foster is listed historically and appears to have passed away per public reviews, so he was not used as current provider.",
+    "Confirm permission before using public listing/social photos."
+  ],
+  "operatingStatus": {
+    "status": "active_confirmed",
+    "evidence": [
+      "Provided verified business record with phone/address",
+      "Recent Loc8NearMe/Yelp/Facebook/Birdeye snippets show hours, reviews, and active listing data",
+      "No confirmed permanently closed listing found; one old petition is not closure evidence"
+    ],
+    "recommendation": "continue"
+  }
+}
