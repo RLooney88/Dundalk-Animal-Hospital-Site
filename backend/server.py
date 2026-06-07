@@ -286,7 +286,7 @@ async def _generate_lead_narrative(
         logger.warning("emergentintegrations not available for lead narrative")
         return None
 
-    api_key = os.environ.get("EMERGENT_LLM_KEY", "")
+    api_key = os.environ.get("OPENAI_API_KEY", "")
     if not api_key:
         return None
 
@@ -984,7 +984,16 @@ async def chat_endpoint(payload: ChatRequest, db: AsyncSession = Depends(get_db)
     )
     history = list(reversed(hist_res.scalars().all()))
 
-    api_key = config.api_key_override or os.environ.get("EMERGENT_LLM_KEY", "")
+    provider_key_env = f"{(config.provider or 'openai').upper()}_API_KEY"
+    api_key = config.api_key_override or os.environ.get(provider_key_env, "")
+    if not api_key and (config.provider or "openai").lower() == "openai":
+        api_key = os.environ.get("OPENAI_API_KEY", "")
+
+    if not api_key:
+        return ChatResponse(
+            reply="Chat is currently unavailable because its API key is not configured. Please call us at (000) 000-0000.",
+            session_token=payload.session_token,
+        )
 
     chat = LlmChat(
         api_key=api_key,

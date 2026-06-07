@@ -9,7 +9,7 @@ load_dotenv(Path(__file__).parent / ".env")
 
 from emergentintegrations.llm.openai.image_generation import OpenAIImageGeneration
 
-API_KEY = os.environ.get("EMERGENT_LLM_KEY", "")
+API_KEY = os.environ.get("OPENAI_API_KEY", "")
 OUT_DIR = Path(__file__).parent.parent / "frontend" / "public" / "images" / "animals"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
