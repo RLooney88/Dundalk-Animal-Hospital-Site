@@ -26,14 +26,14 @@ code {
     /* Site template brand palette. Values are RGB triplets so Tailwind opacity modifiers work. */
     --sand-50: 253 251 247;
     --sand-100: 247 242 232;
-    --sand-200: 239 230 211;
-    --sand-300: 229 225 216;
+    --sand-200: 239 229 202;
+    --sand-300: 225 213 184;
     --clinic-navy: 26 43 76;
     --clinic-navy-hover: 38 59 102;
-    --clinic-forest: 44 85 69;
-    --clinic-forest-hover: 58 110 89;
-    --clinic-sage: 232 240 235;
-    --clinic-sage-deep: 212 226 216;
+    --clinic-forest: 16 144 144;
+    --clinic-forest-hover: 14 123 123;
+    --clinic-sage: 221 239 239;
+    --clinic-sage-deep: 190 224 224;
     --clinic-red: 200 56 46;
     --clinic-red-hover: 166 44 35;
     --clinic-red-soft: 249 230 226;
@@ -51,8 +51,8 @@ code {
     --popover-foreground: 220 48% 20%;
     --primary: 220 48% 20%;
     --primary-foreground: 38 50% 97%;
-    --secondary: 140 20% 92%;
-    --secondary-foreground: 148 32% 25%;
+    --secondary: 180 32% 92%;
+    --secondary-foreground: 180 82% 28%;
     --muted: 38 20% 95%;
     --muted-foreground: 216 17% 43%;
     --accent: 4 62% 48%;
@@ -61,9 +61,9 @@ code {
     --destructive-foreground: 0 0% 98%;
     --border: 38 18% 87%;
     --input: 38 18% 87%;
-    --ring: 148 32% 25%;
+    --ring: 180 82% 28%;
     --radius: 1rem;
-    --chart-1: 148 32% 25%;
+    --chart-1: 180 82% 28%;
     --chart-2: 220 48% 20%;
     --chart-3: 15 62% 57%;
     --chart-4: 38 66% 63%;

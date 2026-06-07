@@ -11,13 +11,13 @@
     "serviceArea": "Dundalk, MD"
   },
   "brand": {
-    "logo": "/brand/dundalk-logo.svg",
+    "logo": "/brand/dundalk-logo-horizontal.png",
     "logoAlt": "Dundalk Animal Hospital logo",
     "colors": {
-      "light": "#F7F4EA",
-      "dark": "#123C69",
-      "accent": "#2A9D8F",
-      "accentLight": "#DDF2EF"
+      "light": "#EFE5CA",
+      "dark": "#1A2B4C",
+      "accent": "#109090",
+      "accentLight": "#DDEFEF"
     }
   },
   "contact": {

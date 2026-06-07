@@ -315,26 +315,44 @@
     "uncategorized": []
   },
   "brand": {
-    "logos": [],
-    "colors": [
+    "logos": [
       {
-        "hex": "#123C69",
-        "source": "manual",
-        "usage": "primary"
+        "path": "frontend/public/brand/dundalk-facebook-logo.png",
+        "source": "facebook og:image",
+        "usage": "source square logo asset"
       },
       {
-        "hex": "#2A9D8F",
-        "source": "manual",
+        "path": "frontend/public/brand/dundalk-logo-horizontal.png",
+        "source": "cropped from Facebook-derived square logo",
+        "usage": "site header logo"
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#1A2B4C",
+        "source": "site baseline / paired dark text",
+        "usage": "primary dark"
+      },
+      {
+        "hex": "#109090",
+        "source": "Facebook-derived logo",
         "usage": "accent"
       },
       {
-        "hex": "#F7F4EA",
-        "source": "manual",
-        "usage": "background"
+        "hex": "#EFE5CA",
+        "source": "Facebook-derived logo background",
+        "usage": "warm background"
+      },
+      {
+        "hex": "#DDEFEF",
+        "source": "derived from logo accent",
+        "usage": "accent light"
       }
     ],
-    "provisionalBrandNeeded": true,
-    "notes": []
+    "provisionalBrandNeeded": false,
+    "notes": [
+      "Facebook-derived official-looking logo asset found and cropped horizontally for header use; confirm client permission/official status before final production use."
+    ]
   },
   "seo": {
     "title": "Dundalk Animal Hospital | Veterinary Care in Dundalk, MD",
@@ -347,14 +365,14 @@
     "socialImage": ""
   },
   "favicons": {
-    "sourceLogo": "",
+    "sourceLogo": "frontend/public/brand/dundalk-logo-horizontal.png",
     "faviconIco": "frontend/public/favicon.ico",
     "logo192": "frontend/public/logo192.png",
     "logo512": "frontend/public/logo512.png",
     "appleTouchIcon": "frontend/public/apple-touch-icon.png",
-    "status": "provisional_monogram",
+    "status": "facebook_logo_source_found_header_cropped",
     "notes": [
-      "No official logo found from accessible sources; generated provisional DAH monogram favicon/app icons."
+      "Facebook-derived square logo retained; horizontal crop created for header branding. Existing favicon/app icons may still need regeneration from this source before final production."
     ]
   },
   "placeholderDomain": {
