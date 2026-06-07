@@ -25,7 +25,7 @@ code {
   :root {
     /* Site template brand palette. Values are RGB triplets so Tailwind opacity modifiers work. */
     --sand-50: 253 251 247;
-    --sand-100: 247 242 232;
+    --sand-100: 248 243 232;
     --sand-200: 239 229 202;
     --sand-300: 225 213 184;
     --clinic-navy: 26 43 76;
@@ -34,16 +34,17 @@ code {
     --clinic-forest-hover: 14 123 123;
     --clinic-sage: 221 239 239;
     --clinic-sage-deep: 190 224 224;
-    --clinic-red: 200 56 46;
-    --clinic-red-hover: 166 44 35;
-    --clinic-red-soft: 249 230 226;
-    --clinic-peach: 251 238 222;
-    --clinic-peach-deep: 245 223 196;
-    --clinic-cream: 253 247 237;
-    --clinic-amber: 232 180 88;
-    --clinic-amber-soft: 251 232 194;
+    --clinic-red: 16 144 144;
+    --clinic-red-hover: 14 123 123;
+    --clinic-red-soft: 221 239 239;
+    --clinic-peach: 239 229 202;
+    --clinic-peach-deep: 225 213 184;
+    --clinic-cream: 250 246 236;
+    --clinic-amber: 239 229 202;
+    --clinic-amber-soft: 248 243 232;
     --clinic-ink: 14 27 54;
-    --clinic-mist: 90 107 130;    --background: 38 50% 97%;
+    --clinic-mist: 87 99 112;
+    --background: 38 50% 97%;
     --foreground: 220 48% 20%;
     --card: 0 0% 100%;
     --card-foreground: 220 48% 20%;
@@ -55,7 +56,7 @@ code {
     --secondary-foreground: 180 82% 28%;
     --muted: 38 20% 95%;
     --muted-foreground: 216 17% 43%;
-    --accent: 4 62% 48%;
+    --accent: 180 82% 28%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;

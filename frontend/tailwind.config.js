@@ -88,8 +88,8 @@ module.exports = {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "soft-pulse": {
-          "0%,100%": { boxShadow: "0 0 0 0 rgba(44,85,69,0.20)" },
-          "50%": { boxShadow: "0 0 0 10px rgba(44,85,69,0)" },
+          "0%,100%": { boxShadow: "0 0 0 0 rgba(16,144,144,0.22)" },
+          "50%": { boxShadow: "0 0 0 10px rgba(16,144,144,0)" },
         },
       },
       animation: {

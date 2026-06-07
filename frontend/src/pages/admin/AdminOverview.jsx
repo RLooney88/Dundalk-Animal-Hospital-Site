@@ -13,7 +13,7 @@ import {
   YAxis,
 } from "recharts";
 
-const COLORS = ["#2C5545", "#1A2B4C", "#D96C4A", "#E8B458", "#5A6B82"];
+const COLORS = ["#109090", "#1A2B4C", "#EFE5CA", "#DDEFEF", "#576370"];
 
 export default function AdminOverview() {
   const [data, setData] = useState(null);
