@@ -280,12 +280,6 @@ async def _generate_lead_narrative(
     trail: list[dict],
 ) -> str | None:
     """Use the LLM to turn the signal trail + form data into a short, human-readable summary."""
-    try:
-        from emergentintegrations.llm.chat import LlmChat, UserMessage
-    except Exception:
-        logger.warning("emergentintegrations not available for lead narrative")
-        return None
-
     api_key = os.environ.get("OPENAI_API_KEY", "")
     if not api_key:
         return None
@@ -329,14 +323,21 @@ Form they just submitted:
 
 Return only the narrative. No preface, no headings."""
 
-    chat = LlmChat(
-        api_key=api_key,
-        session_id=f"lead-summary-{lead.id}",
-        system_message="You produce short, honest, readable summaries of website visitor journeys for a veterinary clinic's front desk team. Never invent details that aren't supported by the data.",
-    ).with_model("openai", "gpt-4o-mini")
-
     try:
-        reply = await chat.send_message(UserMessage(text=user_prompt))
+        from litellm import acompletion
+
+        response = await acompletion(
+            model="openai/gpt-4o-mini",
+            api_key=api_key,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You produce short, honest, readable summaries of website visitor journeys for a veterinary clinic's front desk team. Never invent details that aren't supported by the data.",
+                },
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+        reply = response.choices[0].message.content
         return reply.strip() if reply else None
     except Exception:
         logger.exception("lead narrative LLM call failed")
@@ -954,15 +955,6 @@ async def _get_chatbot_config(db: AsyncSession) -> ChatbotConfig:
 
 @api.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(payload: ChatRequest, db: AsyncSession = Depends(get_db)):
-    try:
-        from emergentintegrations.llm.chat import LlmChat, UserMessage
-    except Exception:
-        logger.warning("emergentintegrations not available for chat endpoint")
-        return ChatResponse(
-            reply="Chat is currently unavailable in this demo. Please call us at (000) 000-0000.",
-            session_token=payload.session_token,
-        )
-
     config = await _get_chatbot_config(db)
     if not config.active:
         return ChatResponse(reply="Chat is currently unavailable. Please call us at (000) 000-0000.", session_token=payload.session_token)
@@ -995,22 +987,18 @@ async def chat_endpoint(payload: ChatRequest, db: AsyncSession = Depends(get_db)
             session_token=payload.session_token,
         )
 
-    chat = LlmChat(
-        api_key=api_key,
-        session_id=f"vet-chat-{payload.session_token}",
-        system_message=system_msg,
-    ).with_model(config.provider, config.model)
-
-    # Replay history into the chat
+    messages = [{"role": "system", "content": system_msg}]
     for msg in history:
-        if msg.role == "user":
-            chat.messages.append({"role": "user", "content": msg.content})
-        else:
-            chat.messages.append({"role": "assistant", "content": msg.content})
+        messages.append({"role": msg.role, "content": msg.content})
+    messages.append({"role": "user", "content": payload.message})
+
+    model = f"{config.provider}/{config.model}" if "/" not in config.model else config.model
 
     try:
-        user_msg = UserMessage(text=payload.message)
-        reply = await chat.send_message(user_msg)
+        from litellm import acompletion
+
+        response = await acompletion(model=model, api_key=api_key, messages=messages)
+        reply = response.choices[0].message.content or ""
     except Exception as exc:
         logger.exception("Chatbot error")
         reply = "I'm having trouble right now. Please call us at (000) 000-0000 and we'll be happy to help."
