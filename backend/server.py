@@ -57,6 +57,7 @@ from schemas import (
 )
 from seed import seed as seed_db
 from seed_portal import seed_portal
+from seed_booking import seed_booking
 from portal import portal as portal_router
 from booking import booking as booking_router
 from nova_site_editor import nova_site_editor as nova_site_editor_router
@@ -149,6 +150,7 @@ async def lifespan(_app: FastAPI):
     try:
         await seed_db()
         await seed_portal()
+        await seed_booking()
     except Exception:
         logger.exception("Seed failed")
     yield
@@ -872,7 +874,7 @@ CLINIC INFO:
 - Address: 123 Main Street, Suite 100, Your City, ST 00000
 - Phone: (000) 000-0000
 - Email: hello@example.com
-- Hours: Mon 8am-4pm, Tue Closed, Wed 12pm-7pm, Thu 8am-4pm, Fri 8am-3pm, Sat 9am-1pm, Sun Closed
+- Hours: Mon 8am-7:30pm, Tue 8am-6pm, Wed 8am-7:30pm, Thu 8am-7:30pm, Fri 8am-7:30pm, Sat 8am-3pm, Sun 8am-12:30pm
 - Parking: Free on-site parking
 - Owner: Dr. Veterinarian Name, DVM (15+ years experience)
 - Team: Team Member Name (Clinic Manager), Team Member Name (Vet Assistant), Team Member Name (Vet Assistant), Team Member Name (Client Services)
