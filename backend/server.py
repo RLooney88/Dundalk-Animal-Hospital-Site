@@ -311,7 +311,7 @@ async def _generate_lead_narrative(
         "total_events": len(trail),
     }
 
-    user_prompt = f"""Write a concise 1-2 paragraph narrative summary (not a list) describing this visitor's experience on Veterinary Practice Name's website before submitting the contact form. Write it in third person, present tense, warm but factual. Mention which animal(s) they focused on, what specific concerns or services drew their attention, and the reason they've reached out now. If they chatted with the bot, weave that in naturally. Do not use bullet points or em-dashes.
+    user_prompt = f"""Write a concise 1-2 paragraph narrative summary (not a list) describing this visitor's experience on Dundalk Animal Hospital's website before submitting the contact form. Write it in third person, present tense, warm but factual. Mention which animal(s) they focused on, what specific concerns or services drew their attention, and the reason they've reached out now. If they chatted with the bot, weave that in naturally. Do not use bullet points or em-dashes.
 
 Visitor session data:
 {json.dumps(trail_desc, indent=2)}
@@ -868,18 +868,17 @@ async def test_webhook(
 
 
 # ---------- Chatbot ----------
-DEFAULT_SYSTEM_PROMPT = """You are the virtual assistant for Veterinary Practice Name, a family-owned veterinary clinic in Your City, ST. You help visitors learn about the clinic's services, answer common pet care questions, and book appointments directly in chat.
+DEFAULT_SYSTEM_PROMPT = """You are the virtual assistant for Dundalk Animal Hospital, a veterinary hospital in Dundalk, Maryland. You help visitors learn about the clinic's services, answer common pet care questions, and book appointments directly in chat.
 
 CLINIC INFO:
-- Address: 123 Main Street, Suite 100, Your City, ST 00000
-- Phone: (000) 000-0000
-- Email: hello@example.com
+- Address: 7810 Wise Ave, Dundalk, MD 21222
+- Phone: (410) 282-2250
+- Email: dundalkanimalhosp@yahoo.com
 - Hours: Mon 8am-7:30pm, Tue 8am-6pm, Wed 8am-7:30pm, Thu 8am-7:30pm, Fri 8am-7:30pm, Sat 8am-3pm, Sun 8am-12:30pm
-- Parking: Free on-site parking
-- Owner: Dr. Veterinarian Name, DVM (15+ years experience)
-- Team: Team Member Name (Clinic Manager), Team Member Name (Vet Assistant), Team Member Name (Vet Assistant), Team Member Name (Client Services)
-- Years serving Your City: 15+
-- Families served: 5,000+
+- Public listings mention veterinary care for dogs, cats, birds, exotic pets, and other animals.
+- Public listings mention wellness care, vaccinations, dental care, surgery, diagnostics, grooming, and boarding.
+- Individual doctor/team names were not confirmed from public source data, so do not invent them.
+- Service area: Dundalk, MD
 
 ANIMALS WE TREAT:
 - Dogs (all life stages: puppy, adult, senior)
@@ -929,11 +928,11 @@ After you have collected ALL SIX fields and confirmed them back to the visitor, 
 The marker must be valid JSON on a single line. Do not emit the marker until you have all six fields. Before the marker, write a short friendly confirmation sentence (for example "Perfect, I've got {pet_name} booked for {preferred_time}. We'll call {client_phone} to confirm."). Do not mention the marker to the visitor."""
 
 DEFAULT_GUARDRAILS = """RULES:
-- Only answer questions related to Veterinary Practice Name, pet care, veterinary medicine, or booking a visit.
-- If someone asks about topics unrelated to pets or veterinary care, politely redirect: "I'm here to help with questions about Vet Clinic and pet care. Is there something about your pet I can help with?"
-- Never provide specific medical diagnoses. For medical concerns, recommend a visit or (for urgent signs) calling (000) 000-0000 right away.
-- Never discuss pricing specifics. Say "we can give you exact pricing over the phone at (000) 000-0000 or at check-in."
-- Do not make up information about the clinic. If unsure, say "I'd recommend calling us at (000) 000-0000 for the most accurate answer."
+- Only answer questions related to Dundalk Animal Hospital, pet care, veterinary medicine, or booking a visit.
+- If someone asks about topics unrelated to pets or veterinary care, politely redirect: "I'm here to help with questions about Dundalk Animal Hospital and pet care. Is there something about your pet I can help with?"
+- Never provide specific medical diagnoses. For medical concerns, recommend a visit or (for urgent signs) calling (410) 282-2250 right away.
+- Never discuss pricing specifics. Say "we can give you exact pricing over the phone at (410) 282-2250 or at check-in."
+- Do not make up information about the clinic. If unsure, say "I'd recommend calling us at (410) 282-2250 for the most accurate answer."
 - Keep responses concise, 2-4 sentences for simple questions.
 - Never use em-dashes. Use commas, hyphens, colons, or periods."""
 
@@ -952,6 +951,11 @@ async def _get_chatbot_config(db: AsyncSession) -> ChatbotConfig:
         db.add(config)
         await db.commit()
         await db.refresh(config)
+    elif any(marker in (config.system_prompt or "") for marker in ["123 Main Street", "Veterinarian Name", "Team Member Name", "hello@example.com", "Dundalk, ST"]):
+        config.system_prompt = DEFAULT_SYSTEM_PROMPT
+        config.guardrails = DEFAULT_GUARDRAILS
+        await db.commit()
+        await db.refresh(config)
     return config
 
 
@@ -959,7 +963,7 @@ async def _get_chatbot_config(db: AsyncSession) -> ChatbotConfig:
 async def chat_endpoint(payload: ChatRequest, db: AsyncSession = Depends(get_db)):
     config = await _get_chatbot_config(db)
     if not config.active:
-        return ChatResponse(reply="Chat is currently unavailable. Please call us at (000) 000-0000.", session_token=payload.session_token)
+        return ChatResponse(reply="Chat is currently unavailable. Please call us at (410) 282-2250.", session_token=payload.session_token)
 
     # Build full system message
     parts = [config.system_prompt]
@@ -985,7 +989,7 @@ async def chat_endpoint(payload: ChatRequest, db: AsyncSession = Depends(get_db)
 
     if not api_key:
         return ChatResponse(
-            reply="Chat is currently unavailable because its API key is not configured. Please call us at (000) 000-0000.",
+            reply="Chat is currently unavailable because its API key is not configured. Please call us at (410) 282-2250.",
             session_token=payload.session_token,
         )
 
@@ -1003,7 +1007,7 @@ async def chat_endpoint(payload: ChatRequest, db: AsyncSession = Depends(get_db)
         reply = response.choices[0].message.content or ""
     except Exception as exc:
         logger.exception("Chatbot error")
-        reply = "I'm having trouble right now. Please call us at (000) 000-0000 and we'll be happy to help."
+        reply = "I'm having trouble right now. Please call us at (410) 282-2250 and we'll be happy to help."
 
     # --- Detect and persist an in-chat booking ---
     booking_saved = False

@@ -69,7 +69,7 @@ async def seed() -> None:
             user = User(
                 email=admin_email,
                 password_hash=hash_password(admin_password),
-                name="Vet Clinic Admin",
+                name="Dundalk Animal Hospital Admin",
                 role="admin",
             )
             db.add(user)

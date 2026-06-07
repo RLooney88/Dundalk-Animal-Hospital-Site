@@ -162,7 +162,7 @@ export default function SlotPicker({ leadId, lead, preferredType, onBooked }) {
         <div className="mt-8 text-sm text-clinic-mist">Loading available times…</div>
       ) : days.length === 0 ? (
         <div className="mt-8 text-sm text-clinic-mist">
-          No availability in the next 14 days. Please call (000) 000-0000.
+          No availability in the next 14 days. Please call (410) 282-2250.
         </div>
       ) : (
         <>

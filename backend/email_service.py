@@ -41,7 +41,7 @@ def send_lead_notification(lead: dict) -> bool:
         trail_html += "</ol>"
 
         html = f"""
-        <h2>New Lead from Veterinary Site Template</h2>
+        <h2>New Lead from Dundalk Animal Hospital Website</h2>
         <p><strong>Name:</strong> {lead.get('name', '')}</p>
         <p><strong>Email:</strong> {lead.get('email', '')}</p>
         <p><strong>Phone:</strong> {lead.get('phone', '')}</p>

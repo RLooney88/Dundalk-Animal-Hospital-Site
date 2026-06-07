@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PawPrint, Phone } from "lucide-react";
 import { useSurface } from "../hooks/useSurface";
 import { useSmartSite } from "../context/SmartSiteContext";
+import { contact } from "../site/siteConfig";
 
 export default function InlineCTA({ forceIntent = null, forceSubIntent = null } = {}) {
   const { content, loading } = useSurface("inline_cta", { forceIntent, forceSubIntent });
@@ -54,11 +55,11 @@ export default function InlineCTA({ forceIntent = null, forceSubIntent = null } 
                 {primary_cta_label || "Request an appointment"}
               </Link>
               <a
-                href="tel:+10000000000"
+                href={contact.phoneHref}
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-sand-50 rounded-full px-7 py-4 font-semibold transition-colors"
                 data-testid="inline-cta-phone"
               >
-                <Phone className="h-4 w-4" /> Call (000) 000-0000
+                <Phone className="h-4 w-4" /> Call {contact.phone}
               </a>
             </div>
           </div>
