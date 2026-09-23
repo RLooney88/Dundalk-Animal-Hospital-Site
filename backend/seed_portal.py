@@ -6,27 +6,38 @@ import logging
 
 from sqlalchemy import select
 
-from auth import hash_password
 from database import AsyncSessionLocal
 from models import Client, Pet, ClientPetLink, PetContact, PetHealthRecord, PetAppointment
 
 logger = logging.getLogger(__name__)
+DEMO_EMAIL = "demo@testdemo.com"
+LEGACY_DEMO_EMAIL = "demo-client@example.com"
+DEMO_PASSWORD_HASH = "$2b$12$m6jZgdTFoAbwu2OGxQPRh.d.dS/T.xMB1254lf0MpjKJCpisP9u6a"
 
 
 async def seed_portal():
     async with AsyncSessionLocal() as db:
-        # Check if already seeded
-        res = await db.execute(select(Client).where(Client.email == "demo-client@example.com"))
-        if res.scalar_one_or_none():
-            logger.info("Portal seed: already seeded, skipping.")
+        res = await db.execute(select(Client).where(Client.email == DEMO_EMAIL))
+        client = res.scalar_one_or_none()
+        if not client:
+            res = await db.execute(select(Client).where(Client.email == LEGACY_DEMO_EMAIL))
+            client = res.scalar_one_or_none()
+
+        if client:
+            client.email = DEMO_EMAIL
+            client.password_hash = DEMO_PASSWORD_HASH
+            client.first_name = "Demo"
+            client.last_name = "Client"
+            await db.commit()
+            logger.info("Portal seed: refreshed demo client credentials.")
             return
 
         # Create client
         client = Client(
-            email="demo-client@example.com",
-            password_hash=hash_password("Rosie2026!"),
-            first_name="Roddy",
-            last_name="Looney",
+            email=DEMO_EMAIL,
+            password_hash=DEMO_PASSWORD_HASH,
+            first_name="Demo",
+            last_name="Client",
             phone="(410) 555-0199",
         )
         db.add(client)
@@ -50,7 +61,7 @@ async def seed_portal():
         db.add(ClientPetLink(client_id=client.id, pet_id=rosie.id, role="owner"))
 
         # Contacts for Rosie
-        db.add(PetContact(pet_id=rosie.id, name="Demo Client", relation="owner", phone="(410) 555-0199", email="demo-client@example.com"))
+        db.add(PetContact(pet_id=rosie.id, name="Demo Client", relation="owner", phone="(410) 555-0199", email=DEMO_EMAIL))
         db.add(PetContact(pet_id=rosie.id, name="Emergency Vet (Local)", relation="emergency", phone="(410) 224-0331"))
 
         # Health records - Vaccinations
